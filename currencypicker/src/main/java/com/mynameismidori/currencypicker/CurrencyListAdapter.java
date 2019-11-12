@@ -48,6 +48,7 @@ public class CurrencyListAdapter extends BaseAdapter {
 
         Cell cell = Cell.from(view);
         cell.textView.setText(currency.getName());
+        cell.textViewSymbol.setText(currency.getSymbol());
 
         currency.loadFlagByCode(mContext);
         if (currency.getFlag() != -1)
@@ -57,6 +58,7 @@ public class CurrencyListAdapter extends BaseAdapter {
 
     static class Cell {
         public TextView textView;
+        public TextView textViewSymbol;
         public ImageView imageView;
 
         static Cell from(View view) {
@@ -66,6 +68,7 @@ public class CurrencyListAdapter extends BaseAdapter {
             if (view.getTag() == null) {
                 Cell cell = new Cell();
                 cell.textView = (TextView) view.findViewById(R.id.row_title);
+                cell.textViewSymbol = (TextView) view.findViewById(R.id.row_symbol);
                 cell.imageView = (ImageView) view.findViewById(R.id.row_icon);
                 view.setTag(cell);
                 return cell;
