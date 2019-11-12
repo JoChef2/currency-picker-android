@@ -141,7 +141,8 @@ public class CurrencyPreference extends ListPreference implements SharedPreferen
     private void search(String text) {
         this.selectedCurrenciesList.clear();
         for (ExtendedCurrency currency : this.currenciesList) {
-            if (currency.getName().toLowerCase(Locale.ENGLISH).contains(text.toLowerCase())) {
+            if (currency.getName().toLowerCase(Locale.ENGLISH).contains(text.toLowerCase())
+            || currency.getSymbol().toLowerCase(Locale.ENGLISH).contains(text.toLowerCase())) {
                 this.selectedCurrenciesList.add(currency);
             }
         }
