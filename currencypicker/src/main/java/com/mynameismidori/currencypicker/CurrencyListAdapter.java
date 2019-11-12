@@ -44,7 +44,7 @@ public class CurrencyListAdapter extends BaseAdapter {
         ExtendedCurrency currency = currencies.get(position);
 
         if (view == null)
-            view = inflater.inflate(R.layout.row, null);
+            view = inflater.inflate(R.layout.row, parent);
 
         Cell cell = Cell.from(view);
         cell.textView.setText(currency.getName());
