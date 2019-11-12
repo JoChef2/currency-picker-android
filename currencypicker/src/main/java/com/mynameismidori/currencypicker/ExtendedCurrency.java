@@ -2,12 +2,15 @@ package com.mynameismidori.currencypicker;
 
 import android.content.Context;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
 public class ExtendedCurrency {
     public static final ExtendedCurrency[] CURRENCIES = {
+            new ExtendedCurrency("BTC", "Bitcoin", "\u0E3F", R.drawable.logo_btc),
+            new ExtendedCurrency("ETH", "Ethereum", "Ξ", R.drawable.logo_eth),
             new ExtendedCurrency("EUR", "Euro", "€", R.drawable.flag_eur),
             new ExtendedCurrency("USD", "United States Dollar", "$", R.drawable.flag_usd),
             new ExtendedCurrency("GBP", "British Pound", "£", R.drawable.flag_gbp),
@@ -174,6 +177,15 @@ public class ExtendedCurrency {
             allCurrenciesList = Arrays.asList(CURRENCIES);
         }
         return allCurrenciesList;
+    }
+
+    public static List<String> getAllCurrencyCodes() {
+        List<String> allCurrencyCodes = new ArrayList<>();
+
+        for(ExtendedCurrency extendedCurrency : getAllCurrencies())
+            allCurrencyCodes.add(extendedCurrency.getCode());
+
+        return allCurrencyCodes;
     }
 
     public static ExtendedCurrency getCurrencyByISO(String currencyIsoCode) {
