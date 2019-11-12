@@ -114,7 +114,8 @@ public class CurrencyPicker extends DialogFragment {
     private void search(String text) {
         selectedCurrenciesList.clear();
         for (ExtendedCurrency currency : currenciesList) {
-            if (currency.getName().toLowerCase(Locale.ENGLISH).contains(text.toLowerCase())) {
+            if (currency.getName().toLowerCase(Locale.ENGLISH).contains(text.toLowerCase())
+            || currency.getCode().toLowerCase(Locale.ENGLISH).contains(text.toLowerCase())) {
                 selectedCurrenciesList.add(currency);
             }
         }
