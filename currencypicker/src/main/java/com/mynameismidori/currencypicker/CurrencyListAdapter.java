@@ -48,7 +48,7 @@ public class CurrencyListAdapter extends BaseAdapter {
 
         Cell cell = Cell.from(view);
         cell.textView.setText(currency.getName());
-        cell.textViewSymbol.setText(currency.getSymbol());
+        cell.textViewSymbol.setText(currency.getCode());
 
         currency.loadFlagByCode(mContext);
         if (currency.getFlag() != -1)
