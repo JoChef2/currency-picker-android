@@ -11,7 +11,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="5dp"
-        android:padding="10dp" />
+        android:padding="5dp" />
 
     <TextView
         android:id="@+id/row_title"
@@ -22,12 +22,12 @@
     
     <TextView
         android:id="@+id/row_symbol"
-        android:layout_width="50dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="5dp"
         android:textStyle="bold"
         android:gravity="end"
-        tools:text="$"
+        tools:text="USD"
         android:layout_marginRight="5dp"/>
 
     <CheckBox
