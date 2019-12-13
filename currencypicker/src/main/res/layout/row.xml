@@ -1,33 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:gravity="center_vertical"
-    android:orientation="horizontal">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
         android:id="@+id/row_icon"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginLeft="5dp"
-        android:padding="10dp" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:padding="10dp"
+        tools:src="@drawable/flag_eur"/>
 
     <TextView
         android:id="@+id/row_title"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:padding="5dp" />
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@id/row_icon"
+        android:layout_toRightOf="@id/row_icon"
+        android:layout_toStartOf="@id/row_symbol"
+        android:layout_toLeftOf="@id/row_symbol"
+        android:padding="5dp"
+        tools:text="Euro"/>
     
     <TextView
         android:id="@+id/row_symbol"
-        android:layout_width="60dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="5dp"
         android:textStyle="bold"
-        android:gravity="end"
-        tools:text="USD"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        tools:text="EUR"
         android:layout_marginRight="5dp"/>
 
     <CheckBox
@@ -36,6 +45,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:padding="10dp"
+        android:layout_centerVertical="true"
         android:layout_marginLeft="10dp" />
 
-</LinearLayout>
+</RelativeLayout>
