@@ -61,7 +61,7 @@ public class ExtendedCurrency {
             new ExtendedCurrency("LAK", "Laos Kip","₭", R.drawable.flag_lak),
             new ExtendedCurrency("LKR", "Sri Lanka Rupee","₨", R.drawable.flag_lkr),
             new ExtendedCurrency("LRD", "Liberia Dollar","$", R.drawable.flag_lrd),
-            new ExtendedCurrency("LTL", "Lithuanian Litas","Lt", R.drawable.flag_ltl),
+            //new ExtendedCurrency("LTL", "Lithuanian Litas","Lt", R.drawable.flag_ltl),
             new ExtendedCurrency("MAD", "Moroccan Dirham","MAD", R.drawable.flag_mad),
             new ExtendedCurrency("MDL", "Moldovan Leu","MDL", R.drawable.flag_mdl),
             new ExtendedCurrency("MKD", "Macedonia Denar","ден", R.drawable.flag_mkd),
