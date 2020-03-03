@@ -8,6 +8,10 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
+import com.bumptech.glide.signature.ObjectKey;
+
 import java.util.List;
 
 public class CurrencyListAdapter extends BaseAdapter {
@@ -53,6 +57,13 @@ public class CurrencyListAdapter extends BaseAdapter {
         currency.loadFlagByCode(mContext);
         if (currency.getFlag() != -1)
             cell.imageView.setImageResource(currency.getFlag());
+        else if(!currency.getFlagUrl().isEmpty()) {
+            Glide.with(mContext)
+                    .load(currency.getFlagUrl())
+                    .signature(new ObjectKey((int) Math.ceil(System.currentTimeMillis() / (double)(30 * 60 * 1000)))) // 1h cache
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .into(cell.imageView);
+        }
         return view;
     }
 
