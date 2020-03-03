@@ -55,7 +55,7 @@ public class CurrencyListAdapter extends BaseAdapter {
         cell.textViewSymbol.setText(currency.getCode());
 
         currency.loadFlagByCode(mContext);
-        if (currency.getFlag() != -1)
+        if (currency.getFlag() > 0)
             cell.imageView.setImageResource(currency.getFlag());
         else if(!currency.getFlagUrl().isEmpty()) {
             Glide.with(mContext)
