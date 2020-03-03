@@ -73,7 +73,7 @@ public class CurrencyPicker extends DialogFragment {
                 if (listener != null) {
                     ExtendedCurrency currency = selectedCurrenciesList.get(position);
                     listener.onSelectCurrency(currency.getName(), currency.getCode(), currency.getSymbol(),
-                            currency.getFlag(), position);
+                            currency.getFlag(), currency.getFlagUrl(), position);
                 }
             }
         });
