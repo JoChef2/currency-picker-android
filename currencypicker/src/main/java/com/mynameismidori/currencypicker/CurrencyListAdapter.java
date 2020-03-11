@@ -60,7 +60,7 @@ public class CurrencyListAdapter extends BaseAdapter {
         else if(!currency.getFlagUrl().isEmpty()) {
             Glide.with(mContext)
                     .load(currency.getFlagUrl())
-                    .signature(new ObjectKey((int) Math.ceil(System.currentTimeMillis() / (double)(30 * 60 * 1000)))) // 1h cache
+                    .signature(new ObjectKey((int) Math.ceil(System.currentTimeMillis() / (double)(3 * 24 * 60 * 60 * 1000)))) // 3d cache
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(cell.imageView);
         }
