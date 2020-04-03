@@ -190,6 +190,15 @@ public class ExtendedCurrency {
         return allCurrenciesList;
     }
 
+    public static List<String> getAllCurrencyCodes() {
+        List<String> allCurrencyCodes = new ArrayList<>();
+
+        for(ExtendedCurrency extendedCurrency : getAllCurrencies())
+            allCurrencyCodes.add(extendedCurrency.getCode());
+
+        return allCurrencyCodes;
+    }
+
     public static ExtendedCurrency getCurrencyByISO(String currencyIsoCode) {
         // Because the data we have is sorted by ISO codes and not by names, we must check all
         // currencies one by one
