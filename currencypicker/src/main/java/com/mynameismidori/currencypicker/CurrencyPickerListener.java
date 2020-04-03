@@ -5,5 +5,5 @@ package com.mynameismidori.currencypicker;
  */
 
 public interface CurrencyPickerListener {
-    public void onSelectCurrency(String name, String code, String symbol, int flagDrawableResID, String flagUrl, int pos);
+    public void onSelectCurrency(String name, String code, String symbol, String slug, int flagDrawableResID, int pos);
 }

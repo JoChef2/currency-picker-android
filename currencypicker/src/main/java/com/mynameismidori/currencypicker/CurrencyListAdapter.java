@@ -54,15 +54,16 @@ public class CurrencyListAdapter extends BaseAdapter {
         cell.textView.setText(currency.getName());
         cell.textViewSymbol.setText(currency.getCode());
 
-        currency.loadFlagByCode(mContext);
-        if (currency.getFlag() > 0)
-            cell.imageView.setImageResource(currency.getFlag());
-        else if(!currency.getFlagUrl().isEmpty()) {
+        if(!currency.getSlug().isEmpty() && !(currency.getSlug().equals("bitcoin") || currency.getSlug().equals("ethereum"))) {
             Glide.with(mContext)
-                    .load(currency.getFlagUrl())
+                    .load("https://thecrypto.app/data/logo/" + currency.getSlug() + ".png")
                     .signature(new ObjectKey((int) Math.ceil(System.currentTimeMillis() / (double)(5 * 24 * 60 * 60 * 1000)))) // 5d cache
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(cell.imageView);
+        } else {
+            currency.loadFlagByCode(mContext);
+            if (currency.getFlag() > 0)
+                cell.imageView.setImageResource(currency.getFlag());
         }
         return view;
     }

@@ -72,8 +72,8 @@ public class CurrencyPicker extends DialogFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (listener != null) {
                     ExtendedCurrency currency = selectedCurrenciesList.get(position);
-                    listener.onSelectCurrency(currency.getName(), currency.getCode(), currency.getSymbol(),
-                            currency.getFlag(), currency.getFlagUrl(), position);
+                    listener.onSelectCurrency(currency.getName(), currency.getCode(), currency.getSymbol(), currency.getSlug(),
+                            currency.getFlag(), position);
                 }
             }
         });
@@ -125,12 +125,5 @@ public class CurrencyPicker extends DialogFragment {
     public void setCurrenciesList(List<ExtendedCurrency> newCurrencies) {
         this.currenciesList.clear();
         this.currenciesList.addAll(newCurrencies);
-    }
-
-    public void setCurrenciesList(Set<String> savedCurrencies) {
-        this.currenciesList.clear();
-        for(String code : savedCurrencies){
-            this.currenciesList.add(ExtendedCurrency.getCurrencyByISO(code));
-        }
     }
 }
