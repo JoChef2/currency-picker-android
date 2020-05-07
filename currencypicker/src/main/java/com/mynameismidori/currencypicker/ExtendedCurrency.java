@@ -199,6 +199,17 @@ public class ExtendedCurrency {
         return allCurrencyCodes;
     }
 
+    public static List<String> getAllCurrencyCodes(List<String> excludeSymbols) {
+        List<String> allCurrencyCodes = new ArrayList<>();
+
+        for(ExtendedCurrency extendedCurrency : getAllCurrencies()) {
+            if(!excludeSymbols.contains(extendedCurrency.getCode()))
+                allCurrencyCodes.add(extendedCurrency.getCode());
+        }
+
+        return allCurrencyCodes;
+    }
+
     public static ExtendedCurrency getCurrencyByISO(String currencyIsoCode) {
         // Because the data we have is sorted by ISO codes and not by names, we must check all
         // currencies one by one
