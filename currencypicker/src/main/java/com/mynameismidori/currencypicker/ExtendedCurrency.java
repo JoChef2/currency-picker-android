@@ -199,6 +199,17 @@ public class ExtendedCurrency {
         return allCurrencyCodes;
     }
 
+    public static List<String> getAllCurrencyCodes(String excludeSymbol) {
+        List<String> allCurrencyCodes = new ArrayList<>();
+
+        for(ExtendedCurrency extendedCurrency : getAllCurrencies()) {
+            if(!extendedCurrency.getCode().equals(excludeSymbol))
+                allCurrencyCodes.add(extendedCurrency.getCode());
+        }
+
+        return allCurrencyCodes;
+    }
+
     public static List<String> getAllCurrencyCodes(List<String> excludeSymbols) {
         List<String> allCurrencyCodes = new ArrayList<>();
 
