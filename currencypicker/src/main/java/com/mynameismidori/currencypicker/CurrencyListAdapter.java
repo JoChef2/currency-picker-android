@@ -62,8 +62,10 @@ public class CurrencyListAdapter extends BaseAdapter {
                     .into(cell.imageView);
         } else {
             currency.loadFlagByCode(mContext);
-            if (currency.getFlag() > 0)
+            if (currency.getFlag() > 0) {
+                Glide.with(mContext).clear(cell.imageView);
                 cell.imageView.setImageResource(currency.getFlag());
+            }
         }
         return view;
     }
