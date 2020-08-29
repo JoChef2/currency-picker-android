@@ -9,11 +9,11 @@ import java.util.List;
 
 public class ExtendedCurrency {
     public static final ExtendedCurrency[] CURRENCIES = {
-            new ExtendedCurrency("BTC", "Bitcoin", "\u0E3F", "bitcoin", R.drawable.flag_btc),
-            new ExtendedCurrency("ETH", "Ethereum", "Ξ", "ethereum", R.drawable.flag_eth),
+            //new ExtendedCurrency("BTC", "Bitcoin", "\u0E3F", "bitcoin", R.drawable.flag_btc),
+            //new ExtendedCurrency("ETH", "Ethereum", "Ξ", "ethereum", R.drawable.flag_eth),
             new ExtendedCurrency("EUR", "Euro", "€", "", R.drawable.flag_eur),
             new ExtendedCurrency("USD", "USA Dollar", "$", "", R.drawable.flag_usd),
-            new ExtendedCurrency("RUB", "Russia Ruble","₽", "", R.drawable.flag_rub),
+            new ExtendedCurrency("RUB", "Russia Ruble", "₽", "", R.drawable.flag_rub),
             new ExtendedCurrency("AED", "VAE Dirham", "د.إ", "", R.drawable.flag_aed),
             new ExtendedCurrency("AFN", "Afghanistan Afghani", "؋", "", R.drawable.flag_afn),
             new ExtendedCurrency("ARS", "Argentinien Peso", "$", "", R.drawable.flag_ars),
