@@ -33,7 +33,7 @@ Step 2\. Add the dependency
 
 ```java
 dependencies {
-        compile 'com.github.midorikocak:currency-picker-android:1.2.1'
+        compile 'com.github.JoChef2:currency-picker-android-german:1.2.17'
 }
 ```
 
