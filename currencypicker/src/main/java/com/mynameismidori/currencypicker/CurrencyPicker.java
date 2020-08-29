@@ -3,7 +3,6 @@ package com.mynameismidori.currencypicker;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import androidx.fragment.app.DialogFragment;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -12,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import androidx.fragment.app.DialogFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,16 +31,16 @@ public class CurrencyPicker extends DialogFragment {
     /**
      * To support show as dialog
      */
-    public static CurrencyPicker newInstance(String dialogTitle) {
-        CurrencyPicker picker = new CurrencyPicker();
+    public static CurrencyPicker newInstance(String dialogTitle, String land) {
+        CurrencyPicker picker = new CurrencyPicker(land);
         Bundle bundle = new Bundle();
         bundle.putString("dialogTitle", dialogTitle);
         picker.setArguments(bundle);
         return picker;
     }
 
-    public CurrencyPicker() {
-        setCurrenciesList(ExtendedCurrency.getAllCurrencies());
+    public CurrencyPicker(String land) {
+        setCurrenciesList(ExtendedCurrency.getAllCurrencies(land));
     }
 
     @Override

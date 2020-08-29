@@ -2,7 +2,7 @@
 
 # Currency Picker for Android
 
-In this fork the library is in german. You can find the full german [release](https://github.com/JoChef2/currency-picker-android/releases/tag/1.2.16) here and a release in german without bitcoin and ethereum [here](https://github.com/JoChef2/currency-picker-android/releases/tag/1.2.17).
+This fork adds German. For that in some methods the parameter land is necessary. For German set it to DE and for English to null.
 
  [![](https://jitpack.io/v/midorikocak/currency-picker-android.svg)](https://jitpack.io/#midorikocak/currency-picker-android)  [![](https://travis-ci.org/midorikocak/currency-picker-android.svg?branch=master)](https://travis-ci.org/midorikocak/currency-picker-android) [![](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/midorikocak)
 
@@ -33,16 +33,19 @@ Step 2\. Add the dependency
 
 ```java
 dependencies {
-        compile 'com.github.JoChef2:currency-picker-android-german:1.2.17'
+        compile 'com.github.JoChef2:currency-picker-android-german:1.2.18'
 }
 ```
 
 ### Usage
 
 Once the project has been added to gradle, the dialog can be easily used.
+***NOTE:*** The newInstance() method needs an additional parameter. The following parameters are available: <br>
+"DE" -> sets the language of the picker to German <br>
+null -> sets the language to English
 
 ```java
-CurrencyPicker picker = CurrencyPicker.newInstance("Select Currency");  // dialog title
+CurrencyPicker picker = CurrencyPicker.newInstance("Select Currency", "DE");  // dialog title
 picker.setListener(new CurrencyPickerListener() {
     @Override
     public void onSelectCurrency(String name, String code, String symbol, int flagDrawableResID) {
@@ -57,9 +60,9 @@ That's it, all done.
 ### Generic operations with countries
 
 ```java
-List<ExtendedCurrency> currencies = ExtendedCurrency.getAllCurrenciesList(); //List of all currencies
-ExtendedCurrency[] currencies = ExtendedCurrency.CURRENCIES; //Array of all currencies
-ExtendedCurrency currency = ExtendedCurrency.getCurrencyByName(currencyName); //Get currency by its name
+ExtendedCurrency[] currencies = ExtendedCurrency.CURRENCIES; //Array of all currencies in Englisch
+ExtendedCurrency[] currencies = ExtendedCurrency.CURRENCIES_DE; //Array of all currencies in German
+ExtendedCurrency currency = ExtendedCurrency.getCurrencyByName(currencyName, languaga); //Get currency by its name and language(DE for German and null fpr Englisch)
 
 
 String name = currency.getName();

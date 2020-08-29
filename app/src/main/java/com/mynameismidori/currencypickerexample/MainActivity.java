@@ -13,7 +13,7 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CurrencyPicker picker = CurrencyPicker.newInstance("Select Currency");  // dialog title
+        CurrencyPicker picker = CurrencyPicker.newInstance("Select Currency", "DE");  // dialog title
         picker.setListener(new CurrencyPickerListener() {
             @Override
             public void onSelectCurrency(String name, String code, String symbol, String slug, int flagDrawableResID, int pos) {
@@ -22,5 +22,4 @@ public class MainActivity extends FragmentActivity {
         });
         picker.show(getSupportFragmentManager(), "CURRENCY_PICKER");
     }
-
 }
