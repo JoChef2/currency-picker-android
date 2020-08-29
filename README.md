@@ -62,7 +62,7 @@ That's it, all done.
 ```java
 ExtendedCurrency[] currencies = ExtendedCurrency.CURRENCIES; //Array of all currencies in Englisch
 ExtendedCurrency[] currencies = ExtendedCurrency.CURRENCIES_DE; //Array of all currencies in German
-ExtendedCurrency currency = ExtendedCurrency.getCurrencyByName(currencyName, languaga); //Get currency by its name and language(DE for German and null fpr Englisch)
+ExtendedCurrency currency = ExtendedCurrency.getCurrencyByName(currencyName, language); //Get currency by its name and language(DE for German and null for Englisch)
 
 
 String name = currency.getName();
