@@ -2,7 +2,7 @@
 
 # Currency Picker for Android
 
-This fork adds German. For that in some methods the parameter land is necessary. For German set it to DE and for English to null.
+This fork adds German. For that in some methods the parameter land is necessary. For German set it to DE and for English to null. Bitcoin and Ethereum aren't available.
 
  [![](https://jitpack.io/v/midorikocak/currency-picker-android.svg)](https://jitpack.io/#midorikocak/currency-picker-android)  [![](https://travis-ci.org/midorikocak/currency-picker-android.svg?branch=master)](https://travis-ci.org/midorikocak/currency-picker-android) [![](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/midorikocak)
 
