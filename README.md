@@ -2,7 +2,7 @@
 
 # Currency Picker for Android
 
-In this fork the library is in german. You can find the full german [release](https://github.com/JoChef2/currency-picker-android/releases/tag/1.2.15) here and a release in german without bitcoin and ethereum [here](https://github.com/JoChef2/currency-picker-android/releases/tag/1.2.16).
+In this fork the library is in german. You can find the full german [release](https://github.com/JoChef2/currency-picker-android/releases/tag/1.2.16) here and a release in german without bitcoin and ethereum [here](https://github.com/JoChef2/currency-picker-android/releases/tag/1.2.17).
 
  [![](https://jitpack.io/v/midorikocak/currency-picker-android.svg)](https://jitpack.io/#midorikocak/currency-picker-android)  [![](https://travis-ci.org/midorikocak/currency-picker-android.svg?branch=master)](https://travis-ci.org/midorikocak/currency-picker-android) [![](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/midorikocak)
 
