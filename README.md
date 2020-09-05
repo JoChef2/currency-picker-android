@@ -2,7 +2,8 @@
 
 # Currency Picker for Android
 
-This fork adds German. Bitcoin and Ethereum aren't available.
+This fork adds German. Bitcoin and Ethereum aren't available. <br>
+In the version 1.2.19 the currencies are more or less alphabetically ordered. In the 1.2.20 some european currencies are at the beginning and then the other. 
 
  [![](https://jitpack.io/v/midorikocak/currency-picker-android.svg)](https://jitpack.io/#midorikocak/currency-picker-android)  [![](https://travis-ci.org/midorikocak/currency-picker-android.svg?branch=master)](https://travis-ci.org/midorikocak/currency-picker-android) [![](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://www.paypal.me/midorikocak)
 
