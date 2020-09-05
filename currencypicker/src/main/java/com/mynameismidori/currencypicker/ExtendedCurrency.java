@@ -1,12 +1,12 @@
 package com.mynameismidori.currencypicker;
 
 import android.content.Context;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Locale;
 
 public class ExtendedCurrency {
     public static final ExtendedCurrency[] CURRENCIES_DE = {
@@ -281,10 +281,10 @@ public class ExtendedCurrency {
 
     private static List<ExtendedCurrency> allCurrenciesList;
 
-    public static List<ExtendedCurrency> getAllCurrencies(String land) {
+    public static List<ExtendedCurrency> getAllCurrencies() {
+        String land = Locale.getDefault().getISO3Language();
         if (allCurrenciesList == null) {
-            Log.d("TAGGZU", " " + land);
-            if (land.equals("DE")) {
+            if (land.equals("deu")) {
                 allCurrenciesList = Arrays.asList(CURRENCIES_DE);
             } else {
                 allCurrenciesList = Arrays.asList(CURRENCIES);
@@ -296,7 +296,7 @@ public class ExtendedCurrency {
     public static List<String> getAllCurrencyCodes() {
         List<String> allCurrencyCodes = new ArrayList<>();
 
-        for (ExtendedCurrency extendedCurrency : getAllCurrencies(null))
+        for (ExtendedCurrency extendedCurrency : getAllCurrencies())
             allCurrencyCodes.add(extendedCurrency.getCode());
 
         return allCurrencyCodes;
@@ -305,7 +305,7 @@ public class ExtendedCurrency {
     public static List<String> getAllCurrencyCodes(String excludeSymbol) {
         List<String> allCurrencyCodes = new ArrayList<>();
 
-        for (ExtendedCurrency extendedCurrency : getAllCurrencies(null)) {
+        for (ExtendedCurrency extendedCurrency : getAllCurrencies()) {
             if (!extendedCurrency.getCode().equals(excludeSymbol))
                 allCurrencyCodes.add(extendedCurrency.getCode());
         }
@@ -316,7 +316,7 @@ public class ExtendedCurrency {
     public static List<String> getAllCurrencyCodes(List<String> excludeSymbols) {
         List<String> allCurrencyCodes = new ArrayList<>();
 
-        for (ExtendedCurrency extendedCurrency : getAllCurrencies(null)) {
+        for (ExtendedCurrency extendedCurrency : getAllCurrencies()) {
             if (!excludeSymbols.contains(extendedCurrency.getCode()))
                 allCurrencyCodes.add(extendedCurrency.getCode());
         }
@@ -324,12 +324,13 @@ public class ExtendedCurrency {
         return allCurrencyCodes;
     }
 
-    public static ExtendedCurrency getCurrencyByISO(String currencyIsoCode, String land) {
+    public static ExtendedCurrency getCurrencyByISO(String currencyIsoCode) {
         // Because the data we have is sorted by ISO codes and not by names, we must check all
         // currencies one by one
+        String land = Locale.getDefault().getISO3Language();
 
         ExtendedCurrency[] extendedCurrencies = CURRENCIES;
-        if (land.equals("DE")) {
+        if (land.equals("deu")) {
             extendedCurrencies = CURRENCIES_DE;
         }
 
@@ -341,12 +342,13 @@ public class ExtendedCurrency {
         return null;
     }
 
-    public static ExtendedCurrency getCurrencyByName(String currencyName, String land) {
+    public static ExtendedCurrency getCurrencyByName(String currencyName) {
         // Because the data we have is sorted by ISO codes and not by names, we must check all
         // currencies one by one
+        String land = Locale.getDefault().getISO3Language();
 
         ExtendedCurrency[] extendedCurrencies = CURRENCIES;
-        if (land.equals("DE")) {
+        if (land.equals("deu")) {
             extendedCurrencies = CURRENCIES_DE;
         }
 

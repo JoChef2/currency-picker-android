@@ -31,16 +31,16 @@ public class CurrencyPicker extends DialogFragment {
     /**
      * To support show as dialog
      */
-    public static CurrencyPicker newInstance(String dialogTitle, String land) {
-        CurrencyPicker picker = new CurrencyPicker(land);
+    public static CurrencyPicker newInstance(String dialogTitle) {
+        CurrencyPicker picker = new CurrencyPicker();
         Bundle bundle = new Bundle();
         bundle.putString("dialogTitle", dialogTitle);
         picker.setArguments(bundle);
         return picker;
     }
 
-    public CurrencyPicker(String land) {
-        setCurrenciesList(ExtendedCurrency.getAllCurrencies(land));
+    public CurrencyPicker() {
+        setCurrenciesList(ExtendedCurrency.getAllCurrencies());
     }
 
     @Override
